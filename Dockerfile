@@ -72,6 +72,21 @@ RUN set -ex \
     perl-crypt-ssleay \
     perl-net-ssleay
 
+RUN apk add --no-cache \
+    most \
+    htop \
+    ncdu \
+    tree \
+    vim \
+    nano \
+    zip unzip \
+    gcc musl-dev linux-headers python3-dev libffi-dev
+
+RUN pip3 install --break-system-packages \
+		bpytop \
+		glances	\
+    updog
+
 # Installing ctop - top-like container monitor
 COPY --from=fetcher /tmp/ctop /usr/local/bin/ctop
 
@@ -87,6 +102,9 @@ COPY --from=fetcher /tmp/grpcurl /usr/local/bin/grpcurl
 # Installing fortio
 COPY --from=fetcher /tmp/fortio /usr/local/bin/fortio
 
+# Installing globalping
+COPY --from=fetcher /tmp/globalping /usr/local/bin/globalping
+
 # Setting User and Home
 USER root
 WORKDIR /root
@@ -97,6 +115,7 @@ RUN curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/in
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 COPY zshrc .zshrc
+COPY bashrc .bashrc
 COPY motd motd
 
 # Fix permissions for OpenShift and tshark

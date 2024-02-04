@@ -76,9 +76,19 @@ get_fortio() {
   chmod +x /tmp/fortio
 }
 
+get_globalping() {
+  VERSION=$(get_latest_release jsdelivr/globalping-cli | sed -e 's/^v//')
+  LINK="https://github.com/jsdelivr/globalping-cli/releases/download/v${VERSION}/globalping_${VERSION}_linux_${ARCH}.deb"  
+  wget "$LINK" -O /tmp/globalping.deb && \
+  dpkg -i /tmp/globalping.deb && \
+  mv "usr/bin/globalping" /tmp/globalping && \
+  chmod +x /tmp/globalping
+}
+
 
 get_ctop
 get_calicoctl
 get_termshark
 get_grpcurl
 get_fortio
+get_globalping

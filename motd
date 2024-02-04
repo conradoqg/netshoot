@@ -5,7 +5,35 @@
 88    88 88.  ...   88         88 88    88 88.  .88 88.  .88   88   
 dP    dP `88888P'   dP   `88888P' dP    dP `88888P' `88888P'   dP   
                                                                     
-Welcome to Netshoot! (github.com/nicolaka/netshoot)
-Version: 0.11
+Welcome to Netshoot! (https://github.com/nicolaka/netshoot)
+Version: 0.11-conradoqg
 
-                                         
+Binaries:
+ apache2-utils, bash, bind-tools, bird, bridge-utils, busybox-extras, conntrack-tools, curl, dhcping, drill, ethtool, fil, fping, grpcurl, iftop, iperf, iperf3, iproute2, ipset, iptables, iptraf-ng, iputils, ipvsadm, jq, libc6-compat, liboping, ltrace, mtr, net-snmp-tools, netcat-openbsd, nftables, ngrep, nmap, nmap-nping, nmap-scripts, openssl, py3-pip, py3-setuptools, scapy, socat, speedtest-cli, openssh, strace, tcpdump, tcptraceroute, tshark, util-linux, vim, git, zsh, websocat, swaks, perl-crypt-ssleay, perl-net-ssleay, globalping, fortio, glances, bpytop, updog, most, htop, ncdu, tree, vim, nano, zip, unzip
+
+Useful commands:
+  Load test (REST, GRPC):
+  $ fortio load http://www.google.com
+
+  Ping
+  $ ping google.com
+
+  Trace
+  $ mtr google.com
+
+  DNS Query
+  $ nslookup google.com
+
+  DNS Dig
+  $ dig google.com
+
+  Resources (like top, htop)
+  $ glances
+  or
+  $ bpytop
+
+  Web Server
+  $ updog
+
+  Internet speed
+  $ speedtest-cli
