@@ -3,7 +3,7 @@ COPY build/fetch_binaries.sh /tmp/fetch_binaries.sh
 
 RUN apt-get update && apt-get install -y \
   curl \
-  wget
+  wget 
 
 RUN /tmp/fetch_binaries.sh
 
@@ -80,12 +80,14 @@ RUN apk add --no-cache \
     vim \
     nano \
     zip unzip \
-    gcc musl-dev linux-headers python3-dev libffi-dev
+    gcc musl-dev linux-headers python3-dev libffi-dev pipx rust cargo openssl-dev bsd-compat-headers
 
 RUN pip3 install --break-system-packages \
 		bpytop \
 		glances	\
-    updog
+    updog 
+
+RUN pipx install mitmproxy
 
 # Installing ctop - top-like container monitor
 COPY --from=fetcher /tmp/ctop /usr/local/bin/ctop

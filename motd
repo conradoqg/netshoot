@@ -12,7 +12,7 @@ Binaries:
  apache2-utils, bash, bind-tools, bird, bridge-utils, busybox-extras, conntrack-tools, curl, dhcping, drill, ethtool, fil, fping, grpcurl, iftop, iperf, iperf3, iproute2, ipset, iptables, iptraf-ng, iputils, ipvsadm, jq, libc6-compat, liboping, ltrace, mtr, net-snmp-tools, netcat-openbsd, nftables, ngrep, nmap, nmap-nping, nmap-scripts, openssl, py3-pip, py3-setuptools, scapy, socat, speedtest-cli, openssh, strace, tcpdump, tcptraceroute, tshark, util-linux, vim, git, zsh, websocat, swaks, perl-crypt-ssleay, perl-net-ssleay, globalping, fortio, glances, bpytop, updog, most, htop, ncdu, tree, vim, nano, zip, unzip
 
 Useful commands:
-  Load test (REST, GRPC):
+  Load test (REST, GRPC) (https://github.com/fortio/fortio?tab=readme-ov-file#simple-load-test):
   $ fortio load http://www.google.com
 
   Ping
@@ -28,12 +28,16 @@ Useful commands:
   $ dig google.com
 
   Resources (like top, htop)
-  $ glances
-  or
-  $ bpytop
+  $ glances or bpytop
 
   Web Server
   $ updog
 
   Internet speed
   $ speedtest-cli
+
+  Proxy (https://docs.mitmproxy.org/stable/)
+  $ mitmdump or mitmproxy or mitmweb
+
+  Network traffic (https://github.com/gcla/termshark/blob/master/docs/UserGuide.md)
+  $ termshark

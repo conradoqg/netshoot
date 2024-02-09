@@ -3,6 +3,10 @@
 # For more information regarding bash shells, see:
 # https://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files
 
+export PATH=/root/.local/bin:$PATH
+
+export TERM="xterm-256color"
+
 # some more ls aliases
 alias ls='ls -lha --color=auto'
 alias grep='grep --color=auto'
